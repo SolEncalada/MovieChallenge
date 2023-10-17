@@ -1,9 +1,13 @@
+import { MovieCard } from "./MovieCard";
+import movies from "./movies.json";
+import styles from "./MoviesGrid.module.css";
+
 export function MoviesGrid() {
   return (
-    <ul>
-      <li>Peli1</li>
-      <li>Peli2</li>
-      <li>Peli3</li>
+    <ul className={styles.moviesGrid}>
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </ul>
   );
 }
